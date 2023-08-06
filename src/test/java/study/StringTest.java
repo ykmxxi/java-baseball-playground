@@ -1,6 +1,7 @@
 package study;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -33,6 +34,21 @@ public class StringTest {
 
 		// when & then
 		assertThat(bracketNumber.substring(1, 4)).isEqualTo("1,2");
+	}
+
+	@DisplayName("charAt() 메서드 활용 학습 테스트")
+	@Test
+	void charAt() {
+		// given
+		String abc = "abc";
+
+		// when & then
+		assertThat(abc.charAt(0)).isEqualTo('a');
+		assertThat(abc.charAt(1)).isEqualTo('b');
+		assertThat(abc.charAt(2)).isEqualTo('c');
+		assertThatThrownBy(() -> abc.charAt(3))
+			.isInstanceOf(StringIndexOutOfBoundsException.class)
+			.hasMessageContaining("String index out of range: 3");
 	}
 
 }
