@@ -25,4 +25,14 @@ public class StringTest {
 		assertThat(one.split(",")).containsExactly("1");
 	}
 
+	@DisplayName("substring() 메서드 활용 학습 테스트")
+	@Test
+	void substring() {
+		// given
+		String bracketNumber = "(1,2)";
+
+		// when & then
+		assertThat(bracketNumber.substring(1, 4)).isEqualTo("1,2");
+	}
+
 }
