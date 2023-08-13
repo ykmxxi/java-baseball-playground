@@ -6,8 +6,8 @@ public class StringCalculator {
 
 	private static final Scanner scanner = new Scanner(System.in);
 
-	public String[] read() {
-		return scanner.nextLine().split(" ");
+	public String[] splitInput(String input) {
+		return input.split(" ");
 	}
 
 	public int calculate(String[] values) {
