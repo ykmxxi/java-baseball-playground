@@ -1,5 +1,7 @@
 package view;
 
+import domain.GameStatus;
+
 public class OutputView {
 
 	private static final String INPUT_GUIDE = "숫자를 입력해 주세요 : ";
@@ -13,6 +15,10 @@ public class OutputView {
 	public static void printEndGuide() {
 		System.out.println(END_GUIDE);
 		System.out.println(RETRY_GUIDE);
+	}
+
+	public static void printGameStatus(GameStatus gameStatus) {
+		System.out.println(gameStatus.getCurrentStatus());
 	}
 
 }

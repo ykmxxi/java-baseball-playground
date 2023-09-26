@@ -4,6 +4,7 @@ import domain.Computer;
 import domain.GameStatus;
 import domain.Player;
 import domain.Referee;
+import view.OutputView;
 
 public class GameService {
 
@@ -26,8 +27,12 @@ public class GameService {
 	}
 
 	public GameStatus play() {
-		return referee.judge(computer.getBaseball(), player.getBaseballs().get(player.getBaseballs().size()));
+		return referee.judge(computer.getBaseball(), player.getBaseballs().get(player.getBaseballs().size() - 1));
 
+	}
+
+	public void printGameStatus(GameStatus gameStatus) {
+		OutputView.printGameStatus(gameStatus);
 	}
 
 	public boolean isReplaying(String input) {

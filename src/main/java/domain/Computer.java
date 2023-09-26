@@ -20,7 +20,7 @@ public class Computer {
 		Set<Integer> numbers = new HashSet<>();
 
 		while (numbers.size() < 3) {
-			numbers.add((int)(Math.random() * 10));
+			numbers.add((int)(Math.random() * 9) + 1);
 		}
 
 		return numbers.stream()

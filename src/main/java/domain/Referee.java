@@ -5,17 +5,17 @@ import java.util.List;
 
 public class Referee {
 
-	private final GameStatus gameStatus;
+	private GameStatus gameStatus;
 	private List<String> computerNumbers;
 	private List<String> playerNumbers;
 
 	public Referee() {
-		gameStatus = new GameStatus();
 		computerNumbers = new ArrayList<>();
 		playerNumbers = new ArrayList<>();
 	}
 
 	public GameStatus judge(Baseball computer, Baseball player) {
+		gameStatus = new GameStatus();
 		computerNumbers = computer.getNumbers();
 		playerNumbers = player.getNumbers();
 
@@ -26,11 +26,11 @@ public class Referee {
 
 	private void compare() {
 		for (int i = 0; i < computerNumbers.size(); i++) {
-			compare(gameStatus, i);
+			compare(i);
 		}
 	}
 
-	private void compare(GameStatus gameStatus, int i) {
+	private void compare(int i) {
 		for (int j = 0; j < playerNumbers.size(); j++) {
 			if (isStrike(i, j)) {
 				gameStatus.addStrike();

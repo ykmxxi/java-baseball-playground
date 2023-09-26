@@ -16,24 +16,24 @@ public class GameController {
 	}
 
 	public void run() {
-		receiveInput();
-
 		playGame();
 
 		retryOrEnd();
+	}
+
+	private void playGame() {
+		GameStatus currentStatus;
+		do {
+			receiveInput();
+			currentStatus = gameService.play();
+			gameService.printGameStatus(currentStatus);
+		} while (!gameService.isEndedGame(currentStatus));
 	}
 
 	private void receiveInput() {
 		OutputView.printInputGuide();
 		String input = inputView.readNumbers();
 		gameService.addPlayerNumbersInput(input);
-	}
-
-	private void playGame() {
-		GameStatus currentStatus;
-		do {
-			currentStatus = gameService.play();
-		} while (gameService.isEndedGame(currentStatus));
 	}
 
 	private void retryOrEnd() {
