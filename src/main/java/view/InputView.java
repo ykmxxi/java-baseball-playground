@@ -3,6 +3,7 @@ package view;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class InputView {
 
@@ -41,7 +42,7 @@ public class InputView {
 		if (rejectDuplicatedNumbers(numbers)) {
 			return true;
 		}
-		return false;
+		return rejectZero(numbers);
 	}
 
 	private boolean rejectEmptyOrWhitespace(String input) {
@@ -59,6 +60,12 @@ public class InputView {
 						   .size();
 
 		return length != 3;
+	}
+
+	private boolean rejectZero(String input) {
+		return IntStream.range(0, input.length())
+						.anyMatch(i -> input.charAt(i) == '0');
+
 	}
 
 	private boolean isCorrectRetryNumber(String input) {
