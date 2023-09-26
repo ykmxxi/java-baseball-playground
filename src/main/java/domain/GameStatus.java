@@ -30,4 +30,8 @@ public class GameStatus {
 		return strike == 0 && ball == 0;
 	}
 
+	public boolean isEnd() {
+		return strike == 3;
+	}
+
 }
