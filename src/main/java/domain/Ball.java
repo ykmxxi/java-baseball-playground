@@ -10,4 +10,8 @@ public class Ball {
 		this.position = position;
 	}
 
+	public boolean isSameNumber(int number) {
+		return this.number == number;
+	}
+
 }
