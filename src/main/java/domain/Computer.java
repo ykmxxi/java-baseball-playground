@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -14,7 +15,11 @@ public class Computer {
 	private final List<Ball> numbers;
 
 	public Computer() {
-		this.numbers = new ArrayList<>();
+		this.numbers = mapToBall(createRandomNumber());
+	}
+
+	public List<Ball> getNumbers() {
+		return Collections.unmodifiableList(numbers);
 	}
 
 	public List<Integer> createRandomNumber() {
@@ -23,6 +28,14 @@ public class Computer {
 						   .distinct()
 						   .limit(SIZE)
 						   .collect(Collectors.toList());
+	}
+
+	private List<Ball> mapToBall(List<Integer> randomNumbers) {
+		List<Ball> balls = new ArrayList<>();
+		for (int index = 0; index < randomNumbers.size(); index++) {
+			balls.add(new Ball(randomNumbers.get(index), index));
+		}
+		return balls;
 	}
 
 }
