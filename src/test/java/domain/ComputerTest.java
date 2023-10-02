@@ -23,4 +23,16 @@ class ComputerTest {
 		).isTrue();
 	}
 
+	@Test
+	void mapToBall() {
+		// given
+		Computer computer = new Computer();
+
+		// when
+		List<Ball> result = computer.getNumbers();
+
+		// then
+		assertThat(result.size()).isEqualTo(3);
+	}
+
 }
