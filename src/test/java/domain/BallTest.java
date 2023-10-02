@@ -22,4 +22,20 @@ class BallTest {
 		assertThat(notSameResult).isFalse();
 	}
 
+	@Test
+	void isSameOrNotPosition() {
+		// given
+		Ball ball = new Ball(1, 1);
+		int samePosition = 1;
+		int notSamePosition = 2;
+
+		// when
+		boolean sameResult = ball.isSamePosition(samePosition);
+		boolean notSameResult = ball.isSamePosition(notSamePosition);
+
+		// then
+		assertThat(sameResult).isTrue();
+		assertThat(notSameResult).isFalse();
+	}
+
 }
