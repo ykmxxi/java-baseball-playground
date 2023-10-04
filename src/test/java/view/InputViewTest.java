@@ -23,4 +23,12 @@ class InputViewTest {
 			.isInstanceOf(IllegalArgumentException.class);
 	}
 
+	@ParameterizedTest
+	@ValueSource(strings = {"", "  ", "0", "12", "one"})
+	void validateReplayNumber(String input) {
+		// when & then
+		assertThatThrownBy(() -> inputView.validateReplayNumber(input))
+			.isInstanceOf(IllegalArgumentException.class);
+	}
+
 }
