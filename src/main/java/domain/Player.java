@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Player {
@@ -12,7 +13,7 @@ public class Player {
 	}
 
 	public List<Ball> getNumbers() {
-		return numbers;
+		return Collections.unmodifiableList(numbers);
 	}
 
 	public void changeNumbers(String input) {
