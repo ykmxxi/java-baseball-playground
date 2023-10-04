@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
 
-	private final List<Ball> numbers;
+	private List<Ball> numbers;
 
 	public Player(String input) {
 		this.numbers = mapToBall(input);
@@ -13,6 +13,10 @@ public class Player {
 
 	public List<Ball> getNumbers() {
 		return numbers;
+	}
+
+	public void changeNumbers(String input) {
+		numbers = mapToBall(input);
 	}
 
 	private List<Ball> mapToBall(String input) {
