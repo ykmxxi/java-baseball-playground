@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class InputView {
 
 	private static final Scanner scanner = new Scanner(System.in);
-	public static final String PLAYER_NUMBER_FORM = "[1-9]{3}";
+	private static final String PLAYER_NUMBER_FORM = "[1-9]{3}";
 	private static final String REPLAY_NUMBER_FORM = "[1|2]";
 
 	public String readPlayerNumber() {
@@ -18,14 +18,14 @@ public class InputView {
 
 	public void validatePlayerNumber(String input) {
 		rejectEmptyOrWhitespaces(input);
-		rejectUnCorrectForm(input);
+		rejectUnCorrectForm(input, PLAYER_NUMBER_FORM);
 		rejectDuplicatedNumber(input);
 	}
 
 	public void validateReplayNumber(String input) {
 		rejectEmptyOrWhitespaces(input);
+		rejectUnCorrectForm(input, REPLAY_NUMBER_FORM);
 		rejectDuplicatedNumber(input);
-		rejectUnCorrectForm2(input);
 	}
 
 	private void rejectEmptyOrWhitespaces(String input) {
@@ -34,8 +34,8 @@ public class InputView {
 		}
 	}
 
-	private void rejectUnCorrectForm(String input) {
-		if (!input.matches(PLAYER_NUMBER_FORM)) {
+	private void rejectUnCorrectForm(String input, String regex) {
+		if (!input.matches(regex)) {
 			throw new IllegalArgumentException();
 		}
 	}
@@ -46,12 +46,6 @@ public class InputView {
 						 .size();
 
 		if (size != 3) {
-			throw new IllegalArgumentException();
-		}
-	}
-
-	private void rejectUnCorrectForm2(String input) {
-		if (!input.matches(REPLAY_NUMBER_FORM)) {
 			throw new IllegalArgumentException();
 		}
 	}
