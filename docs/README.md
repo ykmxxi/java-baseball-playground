@@ -78,6 +78,8 @@
   - 게임이 시작되면 자동으로 숫자를 생성: `createRandomNumber`
   - 생성한 랜덤 넘버를 Ball로 매핑한다: `mapToBall`
 - [ ] 플레이어의 역할을 할 객체: Player
+  - 입력을 받으면 Ball로 매핑한다: `mapToBall`
+  - 새로운 입력이 들어오면 numbers를 변경한다: `changeNumbers`
 - [x] 게임 숫자 역할을 할 객체: Ball
   - 같은 숫자인지 알려준다: `isSameNumber`
   - 숫자가 같은 자리인지 알려준다: `isSamePosition`  
