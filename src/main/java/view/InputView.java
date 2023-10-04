@@ -8,6 +8,7 @@ public class InputView {
 
 	private static final Scanner scanner = new Scanner(System.in);
 	public static final String PLAYER_NUMBER_FORM = "[1-9]{3}";
+	private static final String REPLAY_NUMBER_FORM = "[1|2]";
 
 	public String readPlayerNumber() {
 		String input = scanner.nextLine();
@@ -19,6 +20,12 @@ public class InputView {
 		rejectEmptyOrWhitespaces(input);
 		rejectUnCorrectForm(input);
 		rejectDuplicatedNumber(input);
+	}
+
+	public void validateReplayNumber(String input) {
+		rejectEmptyOrWhitespaces(input);
+		rejectDuplicatedNumber(input);
+		rejectUnCorrectForm2(input);
 	}
 
 	private void rejectEmptyOrWhitespaces(String input) {
@@ -39,6 +46,12 @@ public class InputView {
 						 .size();
 
 		if (size != 3) {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	private void rejectUnCorrectForm2(String input) {
+		if (!input.matches(REPLAY_NUMBER_FORM)) {
 			throw new IllegalArgumentException();
 		}
 	}
