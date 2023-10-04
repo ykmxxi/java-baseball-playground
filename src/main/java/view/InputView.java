@@ -15,26 +15,26 @@ public class InputView {
 		return input;
 	}
 
-	public void validatePlayerNumber(String s) {
-		rejectEmptyOrWhitespaces(s);
-		rejectUnCorrectForm(s);
-		rejectDuplicatedNumber(s);
+	public void validatePlayerNumber(String input) {
+		rejectEmptyOrWhitespaces(input);
+		rejectUnCorrectForm(input);
+		rejectDuplicatedNumber(input);
 	}
 
-	private void rejectEmptyOrWhitespaces(String s) {
-		if (s.isBlank()) {
+	private void rejectEmptyOrWhitespaces(String input) {
+		if (input.isBlank()) {
 			throw new IllegalArgumentException();
 		}
 	}
 
-	private void rejectUnCorrectForm(String s) {
-		if (!s.matches(PLAYER_NUMBER_FORM)) {
+	private void rejectUnCorrectForm(String input) {
+		if (!input.matches(PLAYER_NUMBER_FORM)) {
 			throw new IllegalArgumentException();
 		}
 	}
 
-	private void rejectDuplicatedNumber(String s) {
-		int size = Arrays.stream(s.split(""))
+	private void rejectDuplicatedNumber(String input) {
+		int size = Arrays.stream(input.split(""))
 						 .collect(Collectors.toSet())
 						 .size();
 
