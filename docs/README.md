@@ -87,7 +87,7 @@
 - [ ] 게임 진행에 필요한 문구를 출력하는 객체: OutputView
   - UI 로직
   - 유틸성 코드
-- [ ] 게임 진행에 필요한 값을 입력받는 객체: InputView
+- [x] 게임 진행에 필요한 값을 입력받는 객체: InputView
   - UI 로직
   - 플레이어 숫자를 입력받는다: `readPlayerNumber`
   - 플레이어 숫자 입력에 대한 검증을 한다: `validatePlayerNumber`

@@ -10,7 +10,9 @@ public class InputView {
 	public static final String PLAYER_NUMBER_FORM = "[1-9]{3}";
 
 	public String readPlayerNumber() {
-		return scanner.nextLine();
+		String input = scanner.nextLine();
+		validatePlayerNumber(input);
+		return input;
 	}
 
 	public void validatePlayerNumber(String s) {
