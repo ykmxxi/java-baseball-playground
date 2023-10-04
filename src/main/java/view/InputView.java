@@ -16,6 +16,12 @@ public class InputView {
 		return input;
 	}
 
+	public String readReplayNumber() {
+		String input = scanner.nextLine();
+		validateReplayNumber(input);
+		return input;
+	}
+
 	public void validatePlayerNumber(String input) {
 		rejectEmptyOrWhitespaces(input);
 		rejectUnCorrectForm(input, PLAYER_NUMBER_FORM);
