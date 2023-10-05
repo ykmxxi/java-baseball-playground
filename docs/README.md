@@ -77,16 +77,16 @@
 - [x] 상대방 역할을 할 컴퓨터 객체: Computer
   - 게임이 시작되면 자동으로 숫자를 생성: `createRandomNumber`
   - 생성한 랜덤 넘버를 Ball로 매핑한다: `mapToBall`
-- [ ] 플레이어의 역할을 할 객체: Player
+- [x] 플레이어의 역할을 할 객체: Player
   - 입력을 받으면 Ball로 매핑한다: `mapToBall`
   - 새로운 입력이 들어오면 numbers를 변경한다: `changeNumbers`
 - [x] 게임 숫자 역할을 할 객체: Ball
   - 같은 숫자인지 알려준다: `isSameNumber`
   - 숫자가 같은 자리인지 알려준다: `isSamePosition`  
-- [ ] 컴퓨터와 플레이어의 입력을 비교하는 객체: Referee
+- [x] 컴퓨터와 플레이어의 입력을 비교하는 객체: Referee
   - 컴퓨터와 플레이어의 입력을 비교한다: `compare`
   - 비교한 결과를 알려준다: `notifyJudgmentResult`
-- [ ] 게임 진행에 필요한 문구를 출력하는 객체: OutputView
+- [x] 게임 진행에 필요한 문구를 출력하는 객체: OutputView
   - UI 로직
   - 유틸성 코드
 - [x] 게임 진행에 필요한 값을 입력받는 객체: InputView
