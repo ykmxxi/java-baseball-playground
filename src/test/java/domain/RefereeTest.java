@@ -46,7 +46,7 @@ class RefereeTest {
 	}
 
 	@ParameterizedTest
-	@CsvSource(value = {"1:1:1볼", "1:0:1스트라이크", "2:0:낫싱"})
+	@CsvSource(value = {"1:1:1볼", "1:0:1스트라이크", "2:0:낫싱"}, delimiter = ':')
 	void judgmentResultNothing(String number, String position, String expected) {
 		// given
 		Ball playerBall = new Ball(Integer.parseInt(number), Integer.parseInt(position));
