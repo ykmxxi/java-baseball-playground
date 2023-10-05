@@ -27,6 +27,10 @@ public class Referee {
 		}
 	}
 
+	public String notifyJudgmentResult() {
+		return GameResult.getGameResultMessage(strikeCount, ballCount);
+	}
+
 	private boolean isStrike(Ball computerBall, Ball playerBall) {
 		return computerBall.equals(playerBall);
 	}
