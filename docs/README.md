@@ -86,6 +86,7 @@
 - [x] 컴퓨터와 플레이어의 입력을 비교하는 객체: Referee
   - 컴퓨터와 플레이어의 입력을 비교한다: `compare`
   - 비교한 결과를 알려준다: `notifyJudgmentResult`
+  - 게임 종료 여부를 알려준다: `isGameEnded`
 - [x] 게임 진행에 필요한 문구를 출력하는 객체: OutputView
   - UI 로직
   - 유틸성 코드
@@ -95,7 +96,12 @@
   - 플레이어 숫자 입력에 대한 검증을 한다: `validatePlayerNumber`
   - 재시작 여부를 입력받는다: `readReplayNumber`
   - 재시작 여부 입력에 대한 검증을 한다: `validateReplayNumber`
-- [ ] 객체 협력의 매개체를 할 컨트롤러: GameController
-- [ ] 게임 서비스를 제공할 서비스: GameService
+- [x] 객체 협력의 매개체를 할 컨트롤러: GameController
+  - 게임 시작(가이드 출력, 플레이어 값 입력 받기): `initGame`
+  - 게임 진행(결과 출력, 게임이 끝나지 않았으면 다시 입력): `proceedGame`
+  - 게임 재시작 또는 종료: `replayOrExit`
+- [x] 게임 서비스를 제공할 서비스: GameService
+  - 게임이 시작되면 필요한 객체를 생성하는 초기화한다: `startGame`
+  - 게임의 결과를 판단한다: `judgment`
   - 게임이 끝났는지 알려준다: `isEnded`
   - 게임이 재시작 하는지 알려준다: `isReplay`
