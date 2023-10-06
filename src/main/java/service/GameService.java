@@ -38,4 +38,8 @@ public class GameService {
 		}
 	}
 
+	public boolean isEnded() {
+		return referee.isGameEnded();
+	}
+
 }

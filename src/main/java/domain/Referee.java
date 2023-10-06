@@ -42,4 +42,8 @@ public class Referee {
 			&& !computerBall.isSamePosition(playerBall.getPosition());
 	}
 
+	public boolean isGameEnded() {
+		return strikeCount == 3 && ballCount == 0;
+	}
+
 }
