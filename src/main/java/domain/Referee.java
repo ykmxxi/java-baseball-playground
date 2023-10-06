@@ -19,8 +19,6 @@ public class Referee {
 	}
 
 	public void compare(Ball computerBall, Ball playerBall) {
-		this.strikeCount = 0;
-		this.ballCount = 0;
 		if (isStrike(computerBall, playerBall)) {
 			strikeCount++;
 		}
@@ -30,7 +28,9 @@ public class Referee {
 	}
 
 	public String notifyJudgmentResult() {
-		return GameResult.getGameResultMessage(strikeCount, ballCount);
+		String gameResultMessage = GameResult.getGameResultMessage(strikeCount, ballCount);
+		initialize();
+		return gameResultMessage;
 	}
 
 	private boolean isStrike(Ball computerBall, Ball playerBall) {
@@ -40,6 +40,11 @@ public class Referee {
 	private boolean isBall(Ball computerBall, Ball playerBall) {
 		return computerBall.isSameNumber(playerBall.getNumber())
 			&& !computerBall.isSamePosition(playerBall.getPosition());
+	}
+
+	private void initialize() {
+		this.strikeCount = 0;
+		this.ballCount = 0;
 	}
 
 	public boolean isGameEnded() {
