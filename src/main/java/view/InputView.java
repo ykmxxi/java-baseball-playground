@@ -31,7 +31,6 @@ public class InputView {
 	public void validateReplayNumber(String input) {
 		rejectEmptyOrWhitespaces(input);
 		rejectUnCorrectForm(input, REPLAY_NUMBER_FORM);
-		rejectDuplicatedNumber(input);
 	}
 
 	private void rejectEmptyOrWhitespaces(String input) {
