@@ -8,6 +8,10 @@ public class Player {
 
 	private List<Ball> numbers;
 
+	public Player() {
+		this.numbers = new ArrayList<>();
+	}
+
 	public Player(String input) {
 		this.numbers = mapToBall(input);
 	}
