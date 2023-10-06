@@ -19,6 +19,8 @@ public class Referee {
 	}
 
 	public void compare(Ball computerBall, Ball playerBall) {
+		this.strikeCount = 0;
+		this.ballCount = 0;
 		if (isStrike(computerBall, playerBall)) {
 			strikeCount++;
 		}
