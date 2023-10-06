@@ -21,4 +21,16 @@ public class GameController {
 		gameService.startGame(playerNumber);
 	}
 
+	public void proceedGame() {
+		String judgmentResult = gameService.judgment();
+		OutputView.printGameResult(judgmentResult);
+		if (gameService.isEnded()) {
+			OutputView.printGameEndGuide();
+		}
+		if (!gameService.isEnded()) {
+			initGame();
+			proceedGame();
+		}
+	}
+
 }
