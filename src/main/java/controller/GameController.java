@@ -21,13 +21,13 @@ public class GameController {
 		replayOrExit();
 	}
 
-	public void initGame() {
+	private void initGame() {
 		OutputView.printPlayerNumberInputGuide();
 		String playerNumber = inputView.readPlayerNumber();
 		gameService.startGame(playerNumber);
 	}
 
-	public void proceedGame() {
+	private void proceedGame() {
 		String judgmentResult = gameService.judgment();
 		OutputView.printGameResult(judgmentResult);
 		if (gameService.isEnded()) {
@@ -39,7 +39,7 @@ public class GameController {
 		}
 	}
 
-	public void replayOrExit() {
+	private void replayOrExit() {
 		String replayNumber = inputView.readReplayNumber();
 		if (gameService.isReplay(replayNumber)) {
 			this.gameService = new GameService();
