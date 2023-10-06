@@ -26,6 +26,7 @@ public class GameService {
 	}
 
 	public String judgment() {
+		referee.initialize();
 		List<Ball> computerBalls = computer.getNumbers();
 		List<Ball> playerBalls = player.getNumbers();
 		for (Ball computerBall : computerBalls) {

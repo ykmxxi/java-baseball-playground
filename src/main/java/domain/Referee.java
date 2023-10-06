@@ -27,10 +27,13 @@ public class Referee {
 		}
 	}
 
+	public void initialize() {
+		this.strikeCount = 0;
+		this.ballCount = 0;
+	}
+
 	public String notifyJudgmentResult() {
-		String gameResultMessage = GameResult.getGameResultMessage(strikeCount, ballCount);
-		initialize();
-		return gameResultMessage;
+		return GameResult.getGameResultMessage(strikeCount, ballCount);
 	}
 
 	private boolean isStrike(Ball computerBall, Ball playerBall) {
@@ -40,11 +43,6 @@ public class Referee {
 	private boolean isBall(Ball computerBall, Ball playerBall) {
 		return computerBall.isSameNumber(playerBall.getNumber())
 			&& !computerBall.isSamePosition(playerBall.getPosition());
-	}
-
-	private void initialize() {
-		this.strikeCount = 0;
-		this.ballCount = 0;
 	}
 
 	public boolean isGameEnded() {
