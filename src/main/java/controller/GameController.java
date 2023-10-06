@@ -7,7 +7,7 @@ import view.OutputView;
 public class GameController {
 
 	private final InputView inputView;
-	private final GameService gameService;
+	private GameService gameService;
 
 	public GameController() {
 		this.inputView = new InputView();
@@ -42,6 +42,7 @@ public class GameController {
 	public void replayOrExit() {
 		String replayNumber = inputView.readReplayNumber();
 		if (gameService.isReplay(replayNumber)) {
+			this.gameService = new GameService();
 			run();
 		}
 	}
