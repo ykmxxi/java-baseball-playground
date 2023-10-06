@@ -9,6 +9,8 @@ import domain.Referee;
 
 public class GameService {
 
+	private static final String REPLAY = "1";
+
 	private final Computer computer;
 	private final Player player;
 	private final Referee referee;
@@ -40,6 +42,10 @@ public class GameService {
 
 	public boolean isEnded() {
 		return referee.isGameEnded();
+	}
+
+	public boolean isReplay(String replayNumber) {
+		return replayNumber.equals(REPLAY);
 	}
 
 }
