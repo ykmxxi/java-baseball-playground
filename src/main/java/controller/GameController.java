@@ -15,6 +15,12 @@ public class GameController {
 
 	}
 
+	public void run() {
+		initGame();
+		proceedGame();
+		replayOrExit();
+	}
+
 	public void initGame() {
 		OutputView.printPlayerNumberInputGuide();
 		String playerNumber = inputView.readPlayerNumber();
@@ -30,6 +36,13 @@ public class GameController {
 		if (!gameService.isEnded()) {
 			initGame();
 			proceedGame();
+		}
+	}
+
+	public void replayOrExit() {
+		String replayNumber = inputView.readReplayNumber();
+		if (gameService.isReplay(replayNumber)) {
+			run();
 		}
 	}
 
